@@ -1,0 +1,40 @@
+body {
+    background-color: ghostwhite;
+    background-image: url('../background.png');
+}
+.container {
+    max-width: 800px;
+}
+.blog-title {
+	text-align: center;
+    padding-top: 60px;
+    padding-bottom:60px;
+}
+.blog-title h1 {
+    font-size: 60px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+}
+ul li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+article {
+    padding-bottom: 100px;
+}
+
+article .post-footer {
+    padding-top: 80px;
+    text-align: right;
+}
+
+.align-center {
+    text-align: center;
+}

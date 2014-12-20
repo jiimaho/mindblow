@@ -1,0 +1,42 @@
+{{!< default}}
+
+<div class="container">
+
+  <div class="row">
+      <div class="blog-title">
+        <h1><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+        <h4>{{@blog.description}}</h4>
+
+    </div>
+
+  </div>
+  <div class="row">
+
+    <div class="col-md-8 col-sm-12">
+        {{#foreach posts}}
+          <article>
+            <hr>
+            <h3><i class="glyphicon glyphicon-leaf"></i> <a href="{{url}}">{{title}}</a></h3>
+            <span>{{date published_at format="MMMM DD, YYYY"}}</span>
+            <hr>
+              {{content}}
+
+            <section class="post-footer">
+              Written {{date published_at format="MMMM DD, YYYY"}} by <a href="#">{{author.name}}</a>
+            </section>
+
+          </article>
+        {{/foreach}}
+    </div>
+    <div class="col-md-4">
+      <section class="align-center"><ul>
+          {{#foreach posts}}
+            <li><a href="{{url}}">{{title}}</a></li>
+          {{/foreach}}
+      </ul>
+      </section>
+    </div>
+
+  </div>
+
+</div>
