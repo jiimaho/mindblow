@@ -2,6 +2,14 @@
     font-family: "angel";
     src: url('../fonts/ANGEL___.otf') format('opentype');
 }
+@-webkit-keyframes questionmark-skew {
+    from {
+        -webkit-transform: skew(0deg, 0deg);
+    }
+    to {
+        -webkit-transform: skew(0deg, 10deg);
+    }
+}
 body {
     background-image: url('../background.png');
     font-size: 15pt;
@@ -50,4 +58,11 @@ article .post-footer {
 
 .list-of-posts {
     font-style: italic;
+}
+.f-animation {
+    -webkit-animation-name: questionmark-skew;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+
 }
