@@ -7,7 +7,7 @@
         -webkit-transform: skew(0deg, 0deg);
     }
     to {
-        -webkit-transform: skew(0deg, 10deg);
+        -webkit-transform: skew(0deg, 20deg);
     }
 }
 body {
@@ -52,6 +52,14 @@ article .post-footer {
     font-family: angel;
 }
 
+.blog-title h1 span {
+    display: inline-block;
+    -webkit-animation-name: questionmark-skew;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+
 .align-center {
     text-align: center;
 }
@@ -64,5 +72,8 @@ article .post-footer {
     -webkit-animation-duration: 10s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
-
+}
+footer.blog-footer {
+    text-align: center;
+    font-size: 10pt;
 }

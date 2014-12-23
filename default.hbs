@@ -2,34 +2,69 @@
 <html>
 <head>
     {{! Document Settings }}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
     {{! Page Meta }}
-    <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}" />
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}"/>
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="HandheldFriendly" content="True"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/blog.css"}}" />
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}"/>
+  <link rel="stylesheet" type="text/css" href="{{asset "css/blog.css"}}"/>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+  <link type="text/css" rel="stylesheet" href="{{asset "css/prettify.css"}}"/>
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 blog-title">
+      <h1><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+      <h4><code class="prettyprint">{{@blog.description}}</code></h4>
+    </div>
+  </div>
     {{! Everything else gets inserted here }}
     {{{body}}}
+  <footer class="blog-footer">
+    <ul class="list-inline">
+      <li><a href="https://twitter.com/jiimaho"
+             class="twitter-follow-button"
+             data-show-count="false"
+             data-size="large">Follow @jiimaho
+      </a>
 
-    {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
+      </li>
+      <li><a href="http://github.com/fluentthinker/mindblow" title="GitHub"><img
+        src="{{asset "GitHub-Mark-32px.png"}}"/>Mindblow
+        Ghost theme</a></li>
+      <li><a href="mailto:jiim.aho@gmail.om" title="Mail">Mail</a>
+      </li>
+    </ul>
+  </footer>
+</div>
 
-    {{! The main JavaScript file for Casper }}
-    <script type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script>
+{{! Ghost outputs important scripts and data with this tag }}
+{{ghost_foot}}
+
+<script>!function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = p + '://platform.twitter.com/widgets.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+}(document, 'script', 'twitter-wjs');</script>
+<script type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script>
+<script type="text/javascript" src="{{asset "js/prettify.js"}}"></script>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 
 </body>
 </html>
